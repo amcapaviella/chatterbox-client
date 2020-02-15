@@ -7,7 +7,7 @@ var RoomsView = {
 
   },
 
-  renderRooms: function(data) {
+  grabRooms: function(data) {
     // console.log(data.results);
     // console.log('data results', data.results);
     console.log(data);
@@ -19,7 +19,7 @@ var RoomsView = {
       }
       console.log('room inside the loop!!', room);
       // console.log(room, 'room');
-      this.renderRoom(room);
+      Rooms.add(room);
     }
 
   },

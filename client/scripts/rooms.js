@@ -1,4 +1,2 @@
-var Rooms = {
-
-
-};
+var Rooms = new Set();
+console.log(Rooms);
