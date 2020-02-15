@@ -88,3 +88,10 @@ form input[type=text] {
     background-color: #0090da;
 }
 
+.text {
+    font-size: 12px;
+    border-color: black;
+    margin-bottom: 10px;
+}
+
+
