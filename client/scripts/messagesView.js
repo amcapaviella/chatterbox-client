@@ -11,12 +11,11 @@ var MessagesView = {
       // console.log(data)
       var message = data.results[i];
       // console.log(message, 'message');
-      console.log('username', message.username);
       if (message.username === undefined) {
-        message.username = 'Bradley';
+        message.username = ' ';
       }
-      if(message.text === undefined) {
-        message.text = 'is COOL!!!!';
+      if (message.text === undefined) {
+        message.text = ' '
       }
 
       this.renderMessage(message);
@@ -26,9 +25,13 @@ var MessagesView = {
   },
   //puts each html message into a span and returns it to be added
   renderMessage: function (msg) {
-    // console.log(data.text,\ 'HELLO!!!');
-
+    // var username = msg.username;
+    // var text = msg.text;
+    // var roomname = msg.roomname;
     this.$chats.append(MessageView.render(msg));
+
+
+    //<input type="submit" name="submit" class="submit"/>
 
 
 

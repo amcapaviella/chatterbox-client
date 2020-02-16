@@ -105,10 +105,10 @@ describe('chatterbox', function() {
 
       App.initialize();
       $('#rooms').find('button').trigger('click');
-      expect(Rooms.add.called).to.be.true;
+      expect(Rooms.addRoom.called).to.be.true;
 
       window.prompt = prompt;
-      Rooms.add.restore();
+      Rooms.addRoom.restore();
     });
 
     it('should try to send a message upon clicking submit', function() {

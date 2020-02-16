@@ -11,24 +11,29 @@ var RoomsView = {
     // console.log(data.results);
     // console.log('data results', data.results);
     console.log(data);
-    for (var i = 0; i < data.results.length; i++) {
-      var room = data.results[i].roomname;
-      if (room === undefined) {
-        room = 'lobby';
-        console.log('the undefined room', room);
-      }
-      console.log('room inside the loop!!', room);
-      // console.log(room, 'room');
-      Rooms.add(room);
-    }
 
+    for (var i = 0; i < data.results.length; i++) {
+      var room = data.results[i].roomname || 'lobby';
+      Rooms.add(room);
+
+    }
+    console.log(Rooms);
   },
 
   renderRoom: function(room) {
-    // console.log('room', room);
-    this.$select.append('<option>' + room + '</option>');
+    this.$select.append('<option value="' + room + '">' + room + '</option>');
 
+  },
+
+  addRoom: function () {
+    //checks if the room is in the set
+    this.$button.on('click', function() {
+      var newRoom = window.prompt('Add a Room!');
+      Rooms.add(newRoom);
+      console.log(Rooms, newRoom);
+    });
 
   }
+
 
 };

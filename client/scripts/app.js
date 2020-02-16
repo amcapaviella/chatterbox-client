@@ -4,16 +4,24 @@ var App = {
 
   username: 'anonymous',
 
+
   initialize: function() {
     App.username = window.location.search.substr(10);
 
     FormView.initialize();
     RoomsView.initialize();
     MessagesView.initialize();
+    RoomsView.addRoom();
+
 
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
+    App.data = App.fetch();
+
+
+
+
 
   },
 
@@ -26,6 +34,7 @@ var App = {
 
 
       callback();
+      return data;
     });
   },
 
